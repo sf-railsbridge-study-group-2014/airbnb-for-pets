@@ -1,0 +1,19 @@
+<h1>All Pets</h1>
+
+<% if user_signed_in? %>
+<div class="row">
+	<div class="col-lg-4 col-lg-offset-1 top-button">
+		<button type="button" class="btn btn-default"><%= link_to 'Add a Pet', new_pet_path %></button>
+	</div>
+</div>
+<% end %>
+
+<% @pets.each do |pet| %>
+<div class="row">
+	<div class="col-lg-4 col-lg-offset-1">
+		<p class="pet-name"><%= pet.name %>  <%= link_to 'Details', pet_path(pet) %></p>
+
+	</div>
+</div>
+<% end %>
+
