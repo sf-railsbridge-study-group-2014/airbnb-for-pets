@@ -8,10 +8,27 @@
   </div>
 <% end %>
 
+<h2>Pets</h2>
 <%- @pets.each do |pet| %>
   <div class="row">
     <div class="col-lg-4 col-lg-offset-1">
-      <p class="pet-name"><%= pet.name %>  <%= link_to 'Details', pet_path(pet) %></p>
+      <p class="pet-name"><%= pet.name %>  <%= link_to 'Details', pet_path(pet) %>
+        <%= link_to 'Request a Visit',  pet_visits_path(pet), method: 'post', :class => "top-button" %>
+      </p>
     </div>
   </div>
+<% end %>
+
+<%- if user_signed_in? %>
+  <h2>Visits</h2>
+  <%- current_user.visits.each do |visit| %>
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-1">
+        <p class="pet-name">
+          <%= visit.pet.name %>
+          <%= visit.status %>
+          <%= link_to 'Details', pet_path(visit.pet) %></p>
+      </div>
+    </div>
+  <% end %>
 <% end %>
