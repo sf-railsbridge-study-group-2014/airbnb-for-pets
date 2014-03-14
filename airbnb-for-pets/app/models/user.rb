@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :visits, :foreign_key => :visitor_id
-
+  has_many :pets, :foreign_key => :owner_id
 
 end

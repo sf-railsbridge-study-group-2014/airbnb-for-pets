@@ -20,6 +20,7 @@ For each release:
 * Guest user may see a pet detail with the name and description
 * Registered user may request to visit a pet
 * Registered user may see all of their sent visit requests
+* Pet owner may see a list of pending visit requests
 
 ### Release I
 
@@ -27,7 +28,6 @@ For each release:
 
 ### Release II
 
-* Pet owner may see a list of pending visit requests
 * Pet owner may reject a visit request
 * Pet owner may accept a visit request
 
