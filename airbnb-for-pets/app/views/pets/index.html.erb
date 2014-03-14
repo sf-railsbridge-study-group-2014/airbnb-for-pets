@@ -1,39 +1,39 @@
-<h1>All Pets</h1>
-
+<h2>Pets
 <%- if user_signed_in? %>
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-1 top-button">
       <%= link_to 'Add a Pet', new_pet_path, class: "btn btn-default" %>
-    </div>
-  </div>
 <% end %>
+</h2>
 
-<h2>Pets</h2>
-<%- @pets.each do |pet| %>
-  <div class="row">
-    <div class="col-lg-4 col-lg-offset-1">
-      <p class="pet-name"><%= pet.name %>  <%= link_to 'Details', pet_path(pet) %>
-        <%= link_to 'Request a Visit',  pet_visits_path(pet), method: 'post', :class => "top-button" %>
+<div class="row">
+  <%- @pets.each do |pet| %>
+
+    <div class="col-xs-4 pet">
+      <h4><%= pet.name %></h4>
+      <p><%= pet.description%>
+        <%= link_to 'Request a Visit',  pet_visits_path(pet), method: 'post', :class => "btn btn-primary" %>
       </p>
     </div>
-  </div>
+
 <% end %>
-
+</div>
 <%- if user_signed_in? %>
-  <h2>Visits</h2>
 
-  <h3>Pets I'm visiting</h3>
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Pets I'm visiting</h3>
   <%- current_user.visits.each do |visit| %>
     <div class="row">
       <div class="col-lg-4 col-lg-offset-1">
-        <p class="pet-name">
+        <p>
           <%= visit.pet.name %>
           <%= visit.status %>
           <%= link_to 'Details', pet_path(visit.pet) %></p>
       </div>
     </div>
   <% end %>
+  </div>
 
+  <div class="col-xs-6">
   <h3>People Visiting My Pets</h3>
   <%- current_user.pets.each do |pet| %>
     <h4> <%= pet.name %> </h4>
@@ -42,6 +42,7 @@
         <p><%= visit.status %></p>
       <% end %>
   <% end %>
-
+  </div>
+</div>
 
 <% end %>

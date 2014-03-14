@@ -15,8 +15,7 @@ class PetsController < ApplicationController
 		if !user_signed_in?
 			redirect_to new_user_session_path
 		else
-			@pet = Pet.new(pet_params)
-			@pet.owner = current_user
+			@pet = current_user.pets.new(pet_params)
 
 			respond_to do |format|
 				if @pet.save
