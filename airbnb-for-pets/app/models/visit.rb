@@ -5,4 +5,8 @@ class Visit < ActiveRecord::Base
   def reject!
     update_attributes({"status" => "rejected"})
   end
+
+  def pending?
+    status == "pending"
+  end
 end

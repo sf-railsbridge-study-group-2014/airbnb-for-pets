@@ -40,7 +40,10 @@
       <%- pet.visits.each do |visit| %>
         <p><%= visit.visitor.email %></p>
         <p><%= visit.status %></p>
-        <%= link_to 'Reject',  reject_visit_path(visit), method: 'post', :class => "btn btn-danger" %>
+        <%- if visit.pending? %>
+          <%= link_to 'Reject',  reject_visit_path(visit), method: 'post', :class => "btn btn-danger" %>
+        <%- end %>
+
       <% end %>
   <% end %>
   </div>
