@@ -5,6 +5,12 @@ AirbnbForPets::Application.routes.draw do
     resources :visits, :only => [:create]
   end
 
+  resources :visits, :only => [] do
+    member do
+      post 'reject'
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

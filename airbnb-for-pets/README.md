@@ -21,18 +21,18 @@ For each release:
 * Registered user may request to visit a pet
 * Registered user may see all of their sent visit requests
 * Pet owner may see a list of pending visit requests
-
-### Release I
+* Pet owner may reject a visit request
 
 
 
 ### Release II
 
-* Pet owner may reject a visit request
-* Pet owner may accept a visit request
 
+* Pet owner may accept a visit request
+* Do not show 'request a visit' if not signed in
 * Pet owner sees visit requests grouped by pending, accepted, and rejected
 * Visiting user sees visit requests grouped by pending, accepted, and rejected
+* Visit musthave a visitor
 
 ### Release III
 * Pet may be given a picture by the pet owner
