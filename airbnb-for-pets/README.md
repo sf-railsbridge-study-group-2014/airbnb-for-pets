@@ -22,7 +22,7 @@ For each release:
 * Registered user may see all of their sent visit requests
 * Pet owner may see a list of pending visit requests
 * Pet owner may reject a visit request
-
++
 
 
 ### Release II

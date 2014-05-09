@@ -8,6 +8,7 @@ AirbnbForPets::Application.routes.draw do
   resources :visits, :only => [] do
     member do
       post 'reject'
+      post 'accept'
     end
   end
 

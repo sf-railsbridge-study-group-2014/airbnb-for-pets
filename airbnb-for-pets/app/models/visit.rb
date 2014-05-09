@@ -6,6 +6,10 @@ class Visit < ActiveRecord::Base
     update_attributes({"status" => "rejected"})
   end
 
+  def accept!
+    update_attributes({'status'=> 'accepted'})
+  end
+
   def pending?
     status == "pending"
   end

@@ -6,8 +6,19 @@ class VisitsController < ApplicationController
   end
 
   def reject
-    v = current_user.visits.find(params[:id])
-    v.reject!
+    load_visit.reject!
     redirect_to pets_path
   end
+
+  def accept
+    load_visit.accept!
+    redirect_to pets_path
+  end
+
+  private
+
+  def load_visit()
+    current_user.visits.find(params[:id])
+  end
+
 end
