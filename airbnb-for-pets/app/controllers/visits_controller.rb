@@ -6,7 +6,7 @@ class VisitsController < ApplicationController
   end
 
   def reject
-    v = Visit.find(params[:id])
+    v = current_user.visits.find(params[:id])
     v.reject!
     redirect_to pets_path
   end
